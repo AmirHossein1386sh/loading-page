@@ -1,5 +1,5 @@
 
-@font-face {
+@font-face{
     font-family: "caveat";
     src: url("../font/Caveat-VariableFont_wght.ttf") format("true type");
 }
@@ -74,8 +74,9 @@ h1{
     display: flex;
     width: fit-content;
     position: absolute;
-    top: 0;
+    top: -1rem;
     z-index: 20;
+    font-size: 2.8rem;
 }
 span{
     display: block;
