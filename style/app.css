@@ -1,0 +1,128 @@
+
+@font-face {
+    font-family: "caveat";
+    src: url("../font/Caveat-VariableFont_wght.ttf") format("true type");
+}
+html{
+    box-sizing: border-box;
+}
+body{
+    font-family: "caveat";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:inherit;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    width: 400px;
+}
+.container::before{
+    content: "";
+    position: absolute;
+    height: 4.5rem;
+    background-color:#fff;
+    top: -15px;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    z-index: 15;
+    box-shadow: 0 40px 100px #00b7ff;
+    
+}
+.object{
+    position: relative;
+    border-radius: 100%;
+    width: 4px;
+    height: 330px;
+    background-color: rgb(0, 0, 0);
+}
+.object::after{
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    border-radius: 100%;
+    background-color: black;
+    bottom: -20px;
+    right: -1rem;
+    left: -1rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    animation: shadow forwards 3s ease infinite;
+
+}
+.first{
+    animation: first forwards 3s 0.3s ease infinite;
+}
+.last{
+    animation: last reverse 3s 0.3s ease infinite;
+
+}
+h1{
+    display: flex;
+    width: fit-content;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+}
+span{
+    display: block;
+    animation:dot forwards 4s 0.3s cubic-bezier(0, 1.15, 1, -0.31) infinite;
+}
+span:nth-child(2){
+    animation-delay: 0.6s;
+}
+span:last-child{
+    animation-delay: 0.9s;
+
+}
+@keyframes first {
+    20%{
+        transform:translate3d(-83px, -47px, 18px) rotate3d(0, 0, 1, 45deg); 
+    }
+    50%{
+        transform:translate3d(0, 0, 0) rotate3d(0, 0, 0, -45deg); 
+    }
+}
+@keyframes last {
+    20%{
+        transform:translate3d(83px, -47px, 18px) rotate3d(0, 0, 1, -45deg); 
+    }
+    50%{
+        transform:translate3d(0, 0, 0) rotate3d(0, 0, 0, -45deg); 
+    }
+}
+@keyframes shadow {
+    0%,20%{
+       box-shadow: inset -14px -12px 0px #fff, inset -18px -19px 0 #0099ff;
+
+    }
+    20% , 40%{
+        box-shadow: inset 14px -12px 0px #fff, inset 18px -19px 0 #0099ff;
+    }
+    100%{
+        box-shadow: inset -14px -12px 0px #fff, inset -18px -19px 0 #0099ff;
+    }
+}
+@keyframes dot {
+    0% , 100%{
+        transform: translateY(15px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    
+
+}
